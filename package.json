@@ -1,0 +1,27 @@
+{
+  "name": "data-structure-algorithem-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "graph.js",
+  "scripts": {
+    "start": "nodemon leetcode/array/two-sum/two-sum.js",
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codyzhao/data-structure-algorithem-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Codyzhao/data-structure-algorithem-js/issues"
+  },
+  "homepage": "https://github.com/Codyzhao/data-structure-algorithem-js#readme",
+  "devDependencies": {
+    "jest": "^27.2.4",
+    "nodemon": "^2.0.13"
+  }
+}
