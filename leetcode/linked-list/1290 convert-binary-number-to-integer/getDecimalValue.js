@@ -12,21 +12,21 @@
 var getDecimalValue = function (head) {
   if (head.next === null) return head.val;
   // flip a linked list
-  let o = null;
+  let prev = null;
 
   while (head) {
-    let n = head.next;
-    head.next = o;
-    o = head;
-    head = n;
+    let next = head.next;
+    head.next = prev;
+    prev = head;
+    head = next;
   }
 
   // get the result
   let i = 0;
   let res = 0;
-  while (head) {
-    res += head.val * Math.pow(2, i);
-    head = head.next;
+  while (prev) {
+    res += prev.val * Math.pow(2, i);
+    prev = prev.next;
     i++;
   }
 
