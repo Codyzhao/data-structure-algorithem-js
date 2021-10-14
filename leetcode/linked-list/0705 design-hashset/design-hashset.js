@@ -45,7 +45,6 @@ MyHashSet.prototype.remove = function (key) {
   if (!head) {
     return;
   }
-
   let point = head;
   let cur = head.next;
   while (cur !== null) {
