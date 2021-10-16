@@ -21,3 +21,17 @@ var reverseList = function (head) {
   }
   return prev;
 };
+
+var reverseList2 = function (head) {
+  if (head === null || head.next === null) return head;
+
+  return reverse(null, head);
+
+  function reverse(pre, cur) {
+    if (cur === null) return pre;
+    let next = cur.next;
+    cur.next = pre;
+    pre = cur;
+    return reverse(cur, next);
+  }
+};
