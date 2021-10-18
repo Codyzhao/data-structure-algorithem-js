@@ -1,4 +1,4 @@
-const removeElement = (nums, val) => {
+const removeElement1 = (nums, val) => {
   const numsLength = nums.length;
   if (numsLength === 0) return 0;
 
@@ -18,6 +18,23 @@ const removeElement = (nums, val) => {
   }
 
   return validLength;
+};
+
+const removeElement = (nums, val) => {
+  if (nums.length === 0) return 0;
+
+  let i = 0,
+    j = 0;
+
+  while (i < nums.length) {
+    if (nums[i] !== val) {
+      nums[j] = nums[i];
+      j++;
+    }
+    i++;
+  }
+
+  return j;
 };
 
 module.exports = removeElement;
