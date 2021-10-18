@@ -26,10 +26,8 @@ const removeDuplicates = (nums) => {
     if (i === 0 || nums[i - 1] !== nums[j]) {
       nums[i] = nums[j];
       i++;
-      j++;
-    } else {
-      j++;
     }
+    j++;
   }
 
   return nums.slice(0, i).length;
