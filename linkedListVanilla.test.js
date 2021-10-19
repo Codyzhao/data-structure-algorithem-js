@@ -1,0 +1,33 @@
+const { LinkedList, Node } = require('./linkedListVanilla');
+
+test('LinkedList', () => {
+  const list = new LinkedList();
+  expect(list.size()).toBe(0);
+  expect(list.isEmpty()).toBe(true);
+  expect(list.getHead()).toBe(null);
+  list.append(new Node(1));
+  expect(list.getHead().value).toBe(1);
+  expect(list.indexOf(1)).toBe(0);
+  expect(list.size()).toBe(1);
+  expect(list.isEmpty()).toBe(false);
+  expect(list.getHead().value).toBe(1);
+  list.append(new Node(2));
+  expect(list.size()).toBe(2);
+  list.insertAt(2, new Node(3));
+  expect(list.size()).toBe(2);
+  list.insertAt(1, new Node(3));
+  expect(list.size()).toBe(3);
+  list.insertAt(0, new Node(0));
+  expect(list.getHead().value).toBe(0);
+  expect(list.indexOf(1)).toBe(1);
+  expect(list.indexOf(2)).toBe(2);
+  expect(list.indexOf(3)).toBe(3);
+  const el = list.removeAt(3);
+  expect(el.value).toBe(3);
+  expect(list.size()).toBe(3);
+  expect(list.indexOf(3)).toBe(-1);
+  const el2 = list.removeAt(0);
+  expect(list.size()).toBe(2);
+  expect(list.indexOf(0)).toBe(-1);
+  expect(el2.value).toBe(0);
+});
