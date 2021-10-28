@@ -1,4 +1,3 @@
-const { expect } = require('@jest/globals');
 const fourSumCount = require('./fourSumCount');
 
 test('fourSumCount', () => {
