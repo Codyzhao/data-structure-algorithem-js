@@ -31,8 +31,6 @@ var reverseWords = function (s) {
 
   removeExtraSpace(s);
 
-  console.log(s.join(''));
-
   reverse(s, 0, s.length - 1);
 
   let start = 0;
