@@ -30,3 +30,23 @@ var minDepth = function (root) {
   }
   return level;
 };
+
+var minDepth = function (root) {
+  function getDepth(node) {
+    if (!node) return 0;
+
+    let leftDepth = getDepth(node.left);
+    let rightDepth = getDepth(node.right);
+
+    if (!node.left && node.right) {
+      return 1 + rightDepth;
+    }
+
+    if (!node.right && node.left) {
+      return 1 + leftDepth;
+    }
+
+    return 1 + Math.min(leftDepth, rightDepth);
+  }
+  return getDepth(root);
+};
