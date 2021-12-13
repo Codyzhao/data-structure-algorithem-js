@@ -12,8 +12,8 @@
  */
 var findMode = function (root) {
   let count = 0,
-    maxCount = 1;
-  let pre = root,
+    maxCount = 1,
+    pre = root,
     res = [];
 
   const traversal = (cur) => {
@@ -25,7 +25,7 @@ var findMode = function (root) {
       count = 1;
     }
     pre = cur;
-    if ((count = maxCount)) {
+    if (count === maxCount) {
       res.push(cur.val);
     }
     if (count > maxCount) {
@@ -37,5 +37,40 @@ var findMode = function (root) {
   };
 
   traversal(root);
+  return res;
+};
+
+var findMode = function (root) {
+  const map = new Map();
+  let maxValue = -Infinity;
+  const res = [];
+
+  const traversal = (node) => {
+    if (!node) return;
+    traversal(node.left);
+
+    if (!map.get(node.val)) {
+      map.set(node.val, 1);
+    } else {
+      map.set(node.val, map.get(node.val) + 1);
+    }
+
+    traversal(node.right);
+  };
+
+  traversal(root);
+
+  for (const value of map.values()) {
+    if (value > maxValue) {
+      maxValue = value;
+    }
+  }
+
+  for (const [key, value] of map) {
+    if (value === maxValue) {
+      res.push(key);
+    }
+  }
+
   return res;
 };
