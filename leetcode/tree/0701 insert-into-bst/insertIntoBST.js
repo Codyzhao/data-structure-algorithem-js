@@ -21,3 +21,23 @@ var insertIntoBST = function (root, val) {
 
   return root;
 };
+
+var insertIntoBST = function (root, val) {
+  if (!root) return new TreeNode(val);
+
+  let cur = root;
+  let prev = null;
+  while (cur) {
+    prev = cur;
+    if (cur.val > val) {
+      cur = cur.left;
+    } else {
+      cur = cur.right;
+    }
+  }
+
+  const newNode = new TreeNode(val);
+  prev.val > val ? (prev.left = newNode) : (prev.right = newNode);
+
+  return root;
+};
