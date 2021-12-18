@@ -22,7 +22,7 @@ var toHex = function (num) {
     'f',
   ];
 
-  if (num === 0) return Hex[0];
+  if (num === 0) return arr[0];
 
   let res = '';
 
